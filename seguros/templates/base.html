@@ -1,0 +1,42 @@
+{% load static i18n %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="title" content="Chicas en Tecnologia">
+    <meta name="description" content="Por el diá de la mujer, Chicas en Tecnología se unió a CONICET Voc.ar con el objetivo de realizar una campaña para posicionar a mujeres argentinas que inspiran desde el talento en Ciencia, Tecnología, Ingeniería, Arte digital, Matemáticas y posiciones de liderazgo">
+    <meta name="keywords" content="tecnologia, mujeres, ong, steam, CONICET, vocar">
+    <meta name="author" content="iamcgd">
+    <meta property="og:url" content="#">
+    <meta property="og:title" content="Seguros 2020">
+    <meta property="og:description" content="Conocé a mujeres creadoras de conocimiento que inspiran a las próximas Grandes Mujeres">
+    <meta property="og:image" content="assets/images/steam.png">
+    <link rel="canonical" href="#" type="text/html">
+    <title>Seguros 2020</title>
+
+    {% block css %}
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+      <link href="{% static 'css/tachyons.css' %}" rel="stylesheet">
+      <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    {% endblock %}
+
+  </head>
+
+  <body>
+
+    {% block content %}{% endblock %}
+
+    {% block javascript %}
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="{% static 'js/jquery.js' %}"></script>
+      <script src="{% static 'js/main.js' %}"></script>
+    {% endblock javascript %}
+
+  </body>
+
+</html>
+

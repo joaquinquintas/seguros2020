@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+
+{% load static i18n %}
+
+{% block content %}
+
+  <div id="introLoader" class="introloader">
+    <div class="spinner">
+      <div class="spinner-inner"></div>
+    </div>
+  </div>
+  <header class="mw9 center">
+    <div id="mobile-nav" class="dn-l">
+      <div class="flex items-center justify-between z-2 pl3">
+        <a href="/" class="pv3 f4 fw7 dark-gray link lh-solid ma0">Seguros</br>2020</a>
+        <button id="toggle-menu" type="button" class="bg-transparent bn f4 outline-0 pa3 pointer"></button>
+      </div>
+      <div>
+        <nav id="menu" class="bg-near-white dn">
+          <a href="#" class="link dark-gray hover-bg-white db ph3 pv2">Home</a>
+          <a href="#" class="link dark-gray hover-bg-white db ph3 pv2">Preguntas</a>
+          <a href="#" class="link dark-gray hover-bg-white db ph3 pv2">Staff</a>
+          <a href="#" class="link dark-gray hover-bg-white db ph3 pv2">Contacto </a>
+          <p class="ph3 pv2 bt b--black ma0"><a href="mailto:hola@seguros2020.com" class="link dark-gray db">hola@seguros2020.com</a></p>
+          <p class="ph3 pt2 pb3 ma0">0.810.555.101</p>
+        </nav>
+      </div>
+    </div>
+
+    <div id="desktop-nav" class="dn-ms pv4">
+      <div class="flex justify-between items-center ph3">
+        <a href="/" class="f3 fw7 dark-gray link lh-solid ma0">Seguros</br>2020</a>
+        <p><a href="mailto:hola@seguros2020.com" class="link dark-gray">hola@seguros2020.com</a> </p>
+        <p class="flex items-center"><span class="pr1"><img src="{% static 'images/phone-icon.jpg' %}" class="w-80"/></span>0.810.555.101</p>
+        <nav>
+          <a href="#" class="link dark-gray">Home</a>
+          <a href="#" class="link dark-gray">Preguntas</a>
+          <a href="#" class="link dark-gray">Staff</a>
+          <a href="#" class="link dark-gray">Contacto </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <section class="mw9 center ph3">
+    <div class="flex justify-center items-center flex-wrap">
+      <div class="w-60-ns w-100 tc pv0-ns pv5">
+        <h1 class="ma0">Cotizá tu seguro a</br>precio imbatible.</h1>
+        <p>Comparativa Smart. Decile Hola al futuro.</p>
+        <div class="front-form">
+          <ul class="flex justify-center pb3 flex-row-ns flex-column">
+            <li class="pa2 reset-select">
+              <select>
+                <option selected>Marca</option>
+                <option>1</option>
+              </select>
+            </li>
+            <li class="pa2 reset-select">
+              <select>
+                <option selected>Modelo</option>
+                <option>1</option>
+              </select>
+            </li>
+            <li class="pa2 reset-select">
+              <select>
+                <option selected>Version</option>
+                <option>1</option>
+              </select>
+            </li>
+            <li class="pa2 reset-select">
+              <select>
+                <option selected>Año</option>
+                <option>1</option>
+              </select>
+            </li>
+          </ul>
+          <button class="btn-yellow">Cotizar</button>
+        </div>
+      </div>
+      <div class="w-40-ns w-100 dn-ms">
+        <img src="{% static 'images/seguros_03.jpg' %}" />
+      </div>
+    </div>
+    <ul class="flex justify-between pv4">
+      <li><img src="{% static 'images/logo-1.jpg' %}" /></li>
+      <li><img src="{% static 'images/logo-2.jpg' %}" /></li>
+      <li><img src="{% static 'images/logo-3.jpg' %}" /></li>
+      <li><img src="{% static 'images/logo-4.jpg' %}" /></li>
+      <li><img src="{% static 'images/logo-5.jpg' %}" /></li>
+      <li><img src="{% static 'images/logo-6.jpg' %}" /></li>
+      <li><img src="{% static 'images/logo-7.jpg' %}" /></li>
+    </ul>
+</section>
+<span class="w-100 bg-near-white h1 db"></span>
+<section class="mw7 center ph3 tc pv5-ns pv4">
+  <h1 class="serif normal ma0">Todo comienza con mejor tecnologia</h1>
+  <p class="ma0 pt3">Nuestro sistema Smart ofrece la cobertura ideal para vos.</p>
+  <p class="ma0">No podría ser más fácil, o más rápido.</p>
+  <p><img data-aload="{% static 'images/seguros_22.jpg' %}" /></p>
+</section>
+<section class="mw7 center ph3 tc pv5-ns pv4">
+    <h1 class="serif normal ma0">Precios imbatibles</h1>
+    <h1 class="serif normal ma0">Soporte las 24 hs.</h1>
+    <p class="ma0 pt3">¿Ya estas asegurado? Nos hacemos cargo del traspaso.</p>
+    <p><img data-aload="{% static 'images/seguros_25.jpg' %}" /></p>
+  </section>
+  <section class="mw7 center ph3 tc pv5-ns pv4">
+      <h1 class="serif normal ma0">¿Cómo funciona?</h1>
+      <p class="ma0 pt3">Desde un principio nuestro objetivo fue crear una experiencia Smart. Un sistema tan inteligente, que te permita comparar en segundos el mejor seguro para vos. Seguros 2020 te permite obtener el mejor seguro al mejor precio de manera simple, rápida y fácil. Todo en un celular</p>
+      <ul class="flex justify-center pv3">
+        <li class="ph3"><img data-aload="{% static 'images/seguros_28.jpg' %}" /></li>
+        <li class="ph3"><img data-aload="{% static 'images/seguros_30.jpg' %}" /></li>
+        <li class="ph3"><img data-aload="{% static 'images/seguros_32.jpg' %}" /></li>
+      </ul>
+    </section>
+    <section class="mw8 center ph3 tc pv5-ns pv4">
+        <h1 class="serif normal ma0">Comentarios</h1>
+        <p class="ma0 pt3">¿Ya estas asegurado? Nos hacemos cargo del traspaso.</p>
+        <div class="flex justify-center flex-wrap pa4">
+          <div class="w-50-ns w-100 br-ns bn b--black ph4-ns ph0">
+            <h2 class="f1 serif normal ma0">124 357</h2>
+            <p class="f6 serif ma0">Cotizaciones realizadas</p>
+            <p class="f3 serif pt3 tl">"Excelente el servicio que brindan, muy atentos."</p>
+            <p class="f6 tl">-Pablo Rosales</p>
+          </div>
+          <div class="w-50-ns w-100 pl4-ns pl0">
+            <form class="front-form tl">
+           <p><input type="text" name="name" placeholder="Nombre *" class="input-reset" required/></p>
+           <p><textarea name="comment" placeholder="Comentario *" class="input-reset h4"></textarea></p>
+           <p><button class="btn-yellow ttu">enviar</button></p>
+          </form>
+          </div>
+        </div>
+      </section>
+      <section class="bg-near-white">
+        <div class="mw8 center ph3">
+          <div class="flex justify-center flex-wrap">
+            <div class="w-50-ns w-100 pa4-ns pa2 flex flex-wrap items-center">
+              <span class="w-30-ns w-100 tl-ns tc"><img data-aload="{% static 'images/icons_f1.png' %}" /></span>
+              <div class="w-70-ns w-100 tl-ns tc">
+                <p class="fw7">Una mejor experiencia.</p>
+                <p>Seguros2020 nace del compromiso de una nueva generación. El seguro hecho a medida ofrece más por menos en comparación a empresas tradicionales del rubro</p>
+              </div>
+            </div>
+            <div class="w-50-ns w-100 pa4-ns pa2 flex flex-wrap items-center">
+                <span class="w-30-ns w-100 tl-ns tc"><img data-aload="{% static 'images/icons_f2.png' %}" /></span>
+                <div class="w-70-ns w-100 tl-ns tc">
+                  <p class="fw7">Confiables y compañías líderes.</p>
+                  <p>Nos asociamos con algunas de las compañías de seguro lideres para que nuestros clientes puedan sacarle el máximo provecho a nuestra atención y servicio de confianza.</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+      <footer class="mw9 center ph3">
+        <div class="flex justify-center serif pv4-ns pv3 flex-wrap">
+          <a href="#" class="link dark-gray pa2">Seguros2020</a>
+          <a href="#" class="link dark-gray pa2">FAQ</a>
+          <a href="#" class="link dark-gray pa2">Equipo</a>
+          <a href="#" class="link dark-gray pa2">Trabajá con nosotros</a>
+          <a href="#" class="link dark-gray pa2">Términos</a>
+          <a href="#" class="link dark-gray pa2">Privacidad</a>
+          <a href="#" class="link dark-gray pa2">Contacto</a>
+        </div>
+        <div class="flex justify-between items-center flex-wrap pv4-ns pv3">
+          <ul class="flex justify-start-ns justify-center w-50-ns w-100">
+            <li><a href="#" target="_blank" class="link dim"><img data-aload="{% static 'images/social-facebook.svg' %}" class="w-70"/></a></li>
+            <li><a href="#" target="_blank" class="link dim"><img data-aload="{% static 'images/social-twitter.svg' %}" class="w-70"/></a></li>
+            <li><a href="#" target="_blank" class="link dim"><img data-aload="{% static 'images/social-linkedin.svg' %}" class="w-70"/></a></li>
+            <li><a href="#" target="_blank" class="link dim"><img data-aload="{% static 'images/social-instagram.svg' %}" class="w-70"/></a></li>
+          </ul>
+          <div class="tr-ns tc w-50-ns w-100"><img data-aload="{% static 'images/footer-logos.jpg' %}" class="w-100"/></div>
+        </div>
+      </footer>
+{% endblock %}

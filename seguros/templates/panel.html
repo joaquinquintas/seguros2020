@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load static i18n %}
+
+{% block content %}
+  		<!-- LEFT SIDEBAR -->
+		<div id="left-sidebar" class="left-sidebar ">
+			<!-- main-nav -->
+			<div class="sidebar-scroll">
+				<nav class="main-nav">
+					<ul class="main-menu">
+						<li class="logo"><a href="/"><img src="#" class="w-80" alt="Panel" /></a><h1 class="sr-only">Seguros 2020</h1></li>
+						<li class="inner-menu"><a href="/dashboard/"><i class="fa fa-dashboard fa-fw"></i><span class="text">ejemplo1</a></li>
+						<li class="inner-menu"><a href="/inbox"><i class="fa fa-inbox"></i><span class="text">ejemplo1</span></a></li>
+						<li class="inner-menu"><a href="/file-manager"><i class="fa fa-folder-open"></i><span class="text">ejemplo1</a></li>
+						<li class="inner-menu"><a href="/projects"><i class="fa fa-archive"></i><span class="text">ejemplo1</span></a></li>
+						<li class="inner-menu"><a href="/support-tickets"><i class="fa fa-info-circle"></i><span class="text">ejemplo1</span></a></li>
+					</ul>
+				</nav>
+				<!-- /main-nav -->
+			</div>
+		</div>
+		<!-- END LEFT SIDEBAR -->
+{% endblock %}

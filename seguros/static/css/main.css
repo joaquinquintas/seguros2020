@@ -1,5 +1,3 @@
-@import './vendor/01-tachyons.css';
-
 [data-aload] {
     background-image: none !important;
 }
@@ -71,7 +69,7 @@ h6 {
     }
 }
 
-/* uncss:ignore */
+
 .animated {
     -webkit-animation-duration: 0.5s;
     animation-duration: 0.5s;
@@ -99,7 +97,7 @@ h6 {
     }
 }
 
-/* uncss:ignore */
+
 .fadeIn {
     -webkit-animation-name: fadeIn;
     animation-name: fadeIn;
@@ -143,7 +141,6 @@ h6 {
     height: 46px;
 }
 
-/* uncss:ignore */
 #toggle-menu::after {
     display: block;
     height: 4px;
@@ -154,7 +151,6 @@ h6 {
     content: '';
 }
 
-/* uncss:ignore */
 #toggle-menu::before {
     transition: all 0.3s ease;
     position: absolute;
@@ -165,12 +161,10 @@ h6 {
     content: '';
 }
 
-/* uncss:ignore */
 #toggle-menu.menu-opened {
     position: relative;
 }
 
-/* uncss:ignore */
 #toggle-menu.menu-opened::after {
     transition: all 0.3s ease;
     border: 0;
@@ -181,18 +175,11 @@ h6 {
     transform: rotate(45deg);
 }
 
-/* uncss:ignore */
 #toggle-menu.menu-opened::before {
     background: #000;
     width: 19px;
     margin: 0;
     transform: rotate(-45deg);
-}
-
-#desktop-nav nav a::after {
-    content: "/";
-    display: inline;
-    padding: 0 10px;
 }
 
 #desktop-nav nav a:last-child::after {
@@ -235,13 +222,13 @@ h6 {
 
 .reset-select::after {
     content: "";
-    background: url(../assets/images/down.svg) no-repeat;
-    background-size: 10px 15px;
-    width: 10px;
-    height: 15px;
+    background: url(../images/down.svg) no-repeat;
+    background-size: 15px 23px;
+    width: 15px;
+    height: 23px;
     right: 20px;
     top: 50%;
-    margin-top: -7px;
+    margin-top: -11px;
     position: absolute;
     transition: all 0.15s ease-in;
 }

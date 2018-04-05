@@ -4,10 +4,5 @@
 	 viewBox="0 0 20 11" style="enable-background:new 0 0 20 11;" xml:space="preserve">
 <title>Shape</title>
 <desc>Created with Sketch.</desc>
-<g id="Page-1">
-	<g id="tv-media" transform="translate(-630.000000, -508.000000)">
-		<path d="M640,518.8c-0.3,0-0.5-0.1-0.7-0.3l-8.5-8.5c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l7.8,7.8l7.8-7.8c0.4-0.4,1-0.4,1.4,0
-			s0.4,1,0,1.4l-8.5,8.5C640.5,518.7,640.3,518.8,640,518.8z"/>
-	</g>
-</g>
+<path d="M4.4,0.3L2,2.7l8,8l8-8l-2.4-2.4L10,5.9L4.4,0.3z"/>
 </svg>

@@ -41,60 +41,64 @@
       </div>
     </div>
   </header>
-  <section class="mw9 center ph3">
-    <div class="flex justify-center items-center flex-wrap">
-      <div class="w-60-ns w-100 tc pv0-ns pv5">
-        <h1 class="ma0">Cotizá tu seguro a</br>precio imbatible.</h1>
-        <p>Comparativa Smart. Decile Hola al futuro.</p>
-        <div class="front-form">
-          <ul class="flex justify-center pb3 flex-row-ns flex-column">
-            <li class="pa2 reset-select">
-              <select>
-                <option selected>Marca</option>
-                <option>1</option>
-              </select>
-            </li>
-            <li class="pa2 reset-select">
-              <select>
-                <option selected>Modelo</option>
-                <option>1</option>
-              </select>
-            </li>
-            <li class="pa2 reset-select">
-              <select>
-                <option selected>Version</option>
-                <option>1</option>
-              </select>
-            </li>
-            <li class="pa2 reset-select">
-              <select>
-                <option selected>Año</option>
-                <option>1</option>
-              </select>
-            </li>
-          </ul>
-          <button class="btn-yellow">Cotizar</button>
+
+  {% block cobertura %}
+    <section class="mw9 center ph3">
+      <div class="flex justify-center items-center flex-wrap">
+          <div class="w-60-ns w-100 tc pv0-ns pv5">
+            <h1 class="ma0">Cotizá tu seguro a</br>precio imbatible.</h1>
+            <p>Comparativa Smart. Decile Hola al futuro.</p>
+            <div class="front-form">
+              <ul class="flex justify-center pb3 flex-row-ns flex-column">
+                <li class="pa2 reset-select">
+                  <select>
+                    <option selected>Marca</option>
+                    <option>1</option>
+                  </select>
+                </li>
+                <li class="pa2 reset-select">
+                  <select>
+                    <option selected>Modelo</option>
+                    <option>1</option>
+                  </select>
+                </li>
+                <li class="pa2 reset-select">
+                  <select>
+                    <option selected>Version</option>
+                    <option>1</option>
+                  </select>
+                </li>
+                <li class="pa2 reset-select">
+                  <select>
+                    <option selected>Año</option>
+                    <option>1</option>
+                  </select>
+                </li>
+              </ul>
+              <a class="btn-yellow" href="/cobertura">Cotizar</a>
+            </div>
+          </div>
+
+        <div class="w-40-ns w-100 dn-ms">
+          <img src="{% static 'images/seguros_03.jpg' %}" />
         </div>
       </div>
-      <div class="w-40-ns w-100 dn-ms">
-        <img src="{% static 'images/seguros_03.jpg' %}" />
-      </div>
-    </div>
-    <ul class="flex dn-ms">
-        <li class="ph2 tc"><img src="{% static 'images/logo-8.jpg' %}" class="w-80"></li>
-        <li class="ph2 tc"><img src="{% static 'images/logo-9.jpg' %}" class="w-80"></li>
-        <li class="ph2 tc"><img src="{% static 'images/logo-10.jpg' %}" class="w-80"></li>
-    </ul>
-    <ul class="flex justify-between pb4 dn-ms">
-      <li class="ph3 tc"><img src="{% static 'images/logo-1.jpg' %}" class="w-80"></li>
-      <li class="ph3 tc"><img src="{% static 'images/logo-2.jpg' %}" class="w-80"></li>
-      <li class="ph3 tc"><img src="{% static 'images/logo-3.jpg' %}" class="w-80"></li>
-      <li class="ph3 tc"><img src="{% static 'images/logo-4.jpg' %}" class="w-80"></li>
-      <li class="ph3 tc"><img src="{% static 'images/logo-5.jpg' %}" class="w-80"></li>
-      <li class="ph3 tc"><img src="{% static 'images/logo-6.jpg' %}" class="w-80"></li>
-      <li class="ph3 tc"><img src="{% static 'images/logo-7.jpg' %}" class="w-80"></li>
-    </ul>
-</section>
+      <ul class="flex dn-ms">
+          <li class="ph2 tc"><img src="{% static 'images/logo-8.jpg' %}" class="w-80"></li>
+          <li class="ph2 tc"><img src="{% static 'images/logo-9.jpg' %}" class="w-80"></li>
+          <li class="ph2 tc"><img src="{% static 'images/logo-10.jpg' %}" class="w-80"></li>
+      </ul>
+      <ul class="flex justify-between pb4 dn-ms">
+        <li class="ph3 tc"><img src="{% static 'images/logo-1.jpg' %}" class="w-80"></li>
+        <li class="ph3 tc"><img src="{% static 'images/logo-2.jpg' %}" class="w-80"></li>
+        <li class="ph3 tc"><img src="{% static 'images/logo-3.jpg' %}" class="w-80"></li>
+        <li class="ph3 tc"><img src="{% static 'images/logo-4.jpg' %}" class="w-80"></li>
+        <li class="ph3 tc"><img src="{% static 'images/logo-5.jpg' %}" class="w-80"></li>
+        <li class="ph3 tc"><img src="{% static 'images/logo-6.jpg' %}" class="w-80"></li>
+        <li class="ph3 tc"><img src="{% static 'images/logo-7.jpg' %}" class="w-80"></li>
+      </ul>
+    </section>
+  {% endblock %}
 <span class="w-100 bg-near-white h1 db"></span>
 <section class="mw7 center ph3 tc pv5-ns pv4">
   <h1 class="serif normal ma0">Todo comienza con mejor tecnologia</h1>

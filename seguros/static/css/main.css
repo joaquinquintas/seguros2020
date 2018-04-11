@@ -59,6 +59,10 @@ h6 {
     font-weight: 700;
 }
 
+p {
+    line-height: 1.7rem;
+}
+
 @media screen and (max-width: 60em) {
     .dn-ms {
         display: none;
@@ -242,6 +246,7 @@ h6 {
     -webkit-appearance: none;
     -moz-appearance: none;
     padding: 10px 20px;
+    text-decoration: none;
 }
 
 .btn-yellow:hover {

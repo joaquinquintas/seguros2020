@@ -354,3 +354,97 @@ table td:first-child:hover {
         border-bottom: 0;
     }
 }
+/*DASHBOARD*/
+.sidebar-data {
+    background: black;
+    color: white;
+    width: 280px;
+    height: 100vh;
+    padding: 50px;
+}
+.sidebar-data a {
+    color: #999;
+}
+.content-data {
+    width: calc(100% - 280px);
+    padding: 50px;
+    font-family: 'Open Sans', sans-serif;
+}
+a.logo-databook {
+    font-size: 18px;
+    font-weight: 700;
+    position: relative;
+    color: white;
+}
+
+.logo-databook span {
+    border: solid 2px white;
+    border-radius: 3px;
+    font-size: 12px;
+    font-style: italic;
+    margin-top: -7px;
+    padding: 3px 5px;
+    margin-left: 10px;
+    font-weight: 400;
+    position: absolute;
+}
+.sidebar-data nav {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+.sidebar-data nav span {
+    position: absolute; 
+    margin-left: -25px;
+    width: 7px;
+    height: 7px;
+    border-radius: 7px;
+}
+.sidebar-data nav a p {
+    margin: 0;
+}
+.sidebar-data nav #pendiente span {
+    background-color: white;
+}
+
+.sidebar-data nav #contactado span {
+    background-color: #3a99d9;
+}
+
+.sidebar-data nav #nocontratado span {
+    background-color: #f09a2c;
+}
+
+.sidebar-data nav #contratado span {
+    background-color: #49ff94;
+}
+
+.sidebar-data nav #error span {
+    background-color: #ff564a;
+}
+
+.sidebar-data nav #baja span {
+    background-color: #777777;
+}
+
+.settings-icon,
+.calendar-icon {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.calendar-icon {
+    background: url(../images/calendar.svg) 30px 30px;
+}
+
+.settings-icon {
+    background: url(../images/settings.svg) 30px 30px;
+}
+
+.header-panel .profile-pic {
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    overflow: hidden;
+    display: block;
+}

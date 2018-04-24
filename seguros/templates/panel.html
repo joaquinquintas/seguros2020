@@ -3,22 +3,42 @@
 {% load static i18n %}
 
 {% block content %}
-  		<!-- LEFT SIDEBAR -->
-		<div id="left-sidebar" class="left-sidebar ">
-			<!-- main-nav -->
-			<div class="sidebar-scroll">
-				<nav class="main-nav">
-					<ul class="main-menu">
-						<li class="logo"><a href="/"><img src="#" class="w-80" alt="Panel" /></a><h1 class="sr-only">Seguros 2020</h1></li>
-						<li class="inner-menu"><a href="/dashboard/"><i class="fa fa-dashboard fa-fw"></i><span class="text">ejemplo1</a></li>
-						<li class="inner-menu"><a href="/inbox"><i class="fa fa-inbox"></i><span class="text">ejemplo1</span></a></li>
-						<li class="inner-menu"><a href="/file-manager"><i class="fa fa-folder-open"></i><span class="text">ejemplo1</a></li>
-						<li class="inner-menu"><a href="/projects"><i class="fa fa-archive"></i><span class="text">ejemplo1</span></a></li>
-						<li class="inner-menu"><a href="/support-tickets"><i class="fa fa-info-circle"></i><span class="text">ejemplo1</span></a></li>
-					</ul>
-				</nav>
-				<!-- /main-nav -->
+<div class="flex">
+	<div class="sidebar-data">
+		<a href="#" class="link logo-databook">Databook <span>beta</span></a>
+		<nav class="pv4 pl4">
+			<a href="#" class="link pv3 db">Dashboard</a>
+			<a href="#" class="link pv3 db">Tareas</a>
+			<a href="#" class="link pv3 db">Todos</a>
+			<a href="#" class="link pv3 db flex items-center" id="pendiente"><span></span><p>Pendiente</p></a>
+			<a href="#" class="link pv3 db flex items-center" id="contactado"><span></span><p>Contactado</p></a>
+			<a href="#" class="link pv3 db flex items-center" id="nocontratado"><span></span><p>No Contratado</p></a>
+			<a href="#" class="link pv3 db flex items-center" id="contratado"><span></span><p>Contratado</p></a>
+			<a href="#" class="link pv3 db flex items-center" id="error"><span></span><p>Error</p></a>
+			<a href="#" class="link pv3 db flex items-center" id="baja"><span></span><p>Baja</p></a>
+		</nav>
+		<p class="f8 i lh-solid">Databook is a property of VNL Group. 2015 All Rights Reserved</p>
+	</div>
+
+	<div class="content-data bg-near-white">
+		<div class="header-panel flex justify-between">
+			<div><input type="search"></div>
+			<div class="flex">
+				<a href="#" class="link black flex items-center"><span class="profile-pic"><img src="{% static 'images/profile-pic.jpg' %}" /></span><p class="ma0 pl2">Juan Gonzalez</p></a>
+				<a href="#"><i class="settings-icon"></i></a>
+				<a href="#"><i class="calendar-icon"></i></a>
 			</div>
 		</div>
-		<!-- END LEFT SIDEBAR -->
+		<div class="pv4">
+			<h2 class="ma0">Datos Cotización</h2>
+			<p class="underline silver f5 ma0">Belen Marian Stegman, #4546</p>
+		</div>
+		<div class="flex flex-wrap">
+			<div class="w-third-ns w-100 bg-white pa4 mr2">
+				<p class="silver f7 ma0">Año</p>
+				<p class="black f6 fw6 ma0">2017</p>
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock %}

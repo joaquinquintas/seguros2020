@@ -248,11 +248,26 @@ p {
     padding: 10px 20px;
     text-decoration: none;
 }
+.btn-black {
+    background: black;
+    border: solid 1px black;
+    color: white;
+    min-width: 8rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 10px;
+}
 
 .btn-yellow:hover {
     background: black;
     border: solid 1px black;
     color: white;
+}
+.btn-black:hover {
+    background: #999;
+    border: solid 1px #999;
 }
 
 table {
@@ -359,7 +374,6 @@ table td:first-child:hover {
     background: black;
     color: white;
     width: 280px;
-    height: 100vh;
     padding: 50px;
 }
 .sidebar-data a {
@@ -401,6 +415,7 @@ a.logo-databook {
 }
 .sidebar-data nav a p {
     margin: 0;
+    line-height: 1rem;
 }
 .sidebar-data nav #pendiente span {
     background-color: white;
@@ -426,19 +441,11 @@ a.logo-databook {
     background-color: #777777;
 }
 
-.settings-icon,
-.calendar-icon {
-    width: 30px;
-    height: 30px;
+.icon-header {
+    width: 100%;
+    height: 25px;
     display: block;
-}
-
-.calendar-icon {
-    background: url(../images/calendar.svg) 30px 30px;
-}
-
-.settings-icon {
-    background: url(../images/settings.svg) 30px 30px;
+    margin: 5px 15px;
 }
 
 .header-panel .profile-pic {
@@ -447,4 +454,8 @@ a.logo-databook {
     border-radius: 35px;
     overflow: hidden;
     display: block;
+}
+
+.header-panel input::placeholder {
+    color: #999;
 }

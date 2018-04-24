@@ -5,6 +5,7 @@
 {% block content %}
 <div class="flex">
 	<div class="sidebar-data">
+		<div class="fixed">
 		<a href="#" class="link logo-databook">Databook <span>beta</span></a>
 		<nav class="pv4 pl4">
 			<a href="#" class="link pv3 db">Dashboard</a>
@@ -17,27 +18,101 @@
 			<a href="#" class="link pv3 db flex items-center" id="error"><span></span><p>Error</p></a>
 			<a href="#" class="link pv3 db flex items-center" id="baja"><span></span><p>Baja</p></a>
 		</nav>
-		<p class="f8 i lh-solid">Databook is a property of VNL Group. 2015 All Rights Reserved</p>
+		<p class="f8 i lh-solid mw4">Databook is a property of VNL Group. 2015 All Rights Reserved</p>
+	</div>
 	</div>
 
 	<div class="content-data bg-near-white">
 		<div class="header-panel flex justify-between">
-			<div><input type="search"></div>
+			<div class="bg-white flex items-center ph2"><span><img src="{% static 'images/search.svg' %}" class="w-50"/></span><input type="search" placeholder="Buscar" class="bn"></div>
 			<div class="flex">
-				<a href="#" class="link black flex items-center"><span class="profile-pic"><img src="{% static 'images/profile-pic.jpg' %}" /></span><p class="ma0 pl2">Juan Gonzalez</p></a>
-				<a href="#"><i class="settings-icon"></i></a>
-				<a href="#"><i class="calendar-icon"></i></a>
+				<a href="#" class="link black flex items-center mh3"><span class="profile-pic"><img src="{% static 'images/profile-pic.jpg' %}" /></span><p class="ma0 pl2">Juan Gonzalez</p></a>
+				<a href="#"><span class="icon-header"> <img src="{% static 'images/settings.svg' %}"/></span></a>
+				<a href="#"><span class="icon-header"> <img src="{% static 'images/calendar.svg' %}" /></span></a>
 			</div>
 		</div>
-		<div class="pv4">
+		<div class="pv4 ph2">
 			<h2 class="ma0">Datos Cotización</h2>
 			<p class="underline silver f5 ma0">Belen Marian Stegman, #4546</p>
 		</div>
-		<div class="flex flex-wrap">
-			<div class="w-third-ns w-100 bg-white pa4 mr2">
-				<p class="silver f7 ma0">Año</p>
-				<p class="black f6 fw6 ma0">2017</p>
+		<div class="flex flex-wrap pb4">
+			<div class="w-third-ns w-100 ph2">
+			<div class="bg-white pa4">
+				<ul class="pb4">
+				<li class="silver f7 pv1">Año</li>
+				<li class="black f6 fw6 pv1">2017</li>
+				</ul>
+				<ul class="pb4">
+				<li class="silver f7 pv1">Marca</li>
+				<li class="black f6 fw6 pv1">Peugeot</li>
+				</ul>
+				<ul class="pb4">
+				<li class="silver f7 pv1">Grupo Modelo</li>
+				<li class="black f6 fw6 pv1">208</li>
+				</ul>
+				<ul class="pb4">
+				<li class="silver f7 pv1">Modelo</li>
+				<li class="black f6 fw6 pv1">208 1.5 5P Allure</li>
+				</ul>
+				<ul class="pb4">
+				<li class="silver f7 pv1">Rastro Satelital</li>
+				<li class="black f6 fw6 pv1">.</li>
+				</ul>
+				<ul class="pb4">
+				<li class="silver f7 pv1">Provincia</li>
+				<li class="black f6 fw6 pv1">.</li>
+				</ul>
+				<ul class="pb4">
+				<li class="silver f7 pv1">Localidad Allianz</li>
+				<li class="black f6 fw6 pv1">.</li>
+				</ul>
 			</div>
+		</div>
+		<div class="w-third-ns w-100 ph2">
+				<div class="bg-white pa4">
+					<ul class="pb4">
+					<li class="silver f7 pv1">Localidad Mercantil</li>
+					<li class="black f6 fw6 pv1">C. Federal</li>
+					</ul>
+					<ul class="pb4">
+					<li class="silver f7 pv1">Forma de Pago</li>
+					<li class="black f6 fw6 pv1">American Express</li>
+					</ul>
+					<ul class="pb4">
+					<li class="silver f7 pv1">Fecha de Nacimiento del titular</li>
+					<li class="black f6 fw6 pv1">01/01/1980</li>
+					</ul>
+					<ul class="pb4">
+					<li class="silver f7 pv1">Valor GNC</li>
+					<li class="black f6 fw6 pv1">.</li>
+					</ul>
+					<ul class="pb4">
+					<li class="silver f7 pv1">Cero Km</li>
+					<li class="black f6 fw6 pv1">si</li>
+					</ul>
+					<ul class="pb4">
+					<li class="silver f7 pv1">Codigo Postal</li>
+					<li class="black f6 fw6 pv1">.</li>
+					</ul>
+					<ul class="pb4">
+					<li class="silver f7 pv1">Localidad Zurich</li>
+					<li class="black f6 fw6 pv1">.</li>
+					</ul>
+				</div></div>
+				<div class="w-third-ns w-100 ph2">
+						<div class="bg-white pa4">
+						<ul class="pb4">
+						<li class="silver f7 pv1">Tipo de IVA</li>
+						<li class="black f6 fw6 pv1">Consumidor Final</li>
+						</ul>
+						<ul class="pb4">
+						<li class="silver f7 pv1">Tipo de Uso</li>
+						<li class="black f6 fw6 pv1">Particular</li>
+						</ul></div></div>
+		</div>
+		<div class="flex">
+			<button class="btn-black">Cancelar</button>
+			<button class="btn-black">Cotizar</button>
 		</div>
 	</div>
 </div>

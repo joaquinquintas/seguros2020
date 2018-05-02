@@ -14,20 +14,15 @@ import os
 
 
 
-ROOT_DIR = environ.Path(__file__) - 3  # (seguros/config/settings/base.py - 3 = seguros/)
+ROOT_DIR =  os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))  # (seguros/config/settings/base.py - 3 = seguros/)
 APPS_DIR = ROOT_DIR.path('seguros')
 
-env = environ.Env()
 
-READ_DOT_ENV_FILE = env.bool('DJANGO_READ_DOT_ENV_FILE', default=False)
-if READ_DOT_ENV_FILE:
-    # OS environment variables take precedence over variables from .env
-    env.read_env(str(ROOT_DIR.path('.env')))
 
 # GENERAL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#debug
-DEBUG = env.bool('DJANGO_DEBUG', False)
+DEBUG = True
 # Local time zone. Choices are
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # though not all of them may be available with every OS.
@@ -47,10 +42,7 @@ USE_TZ = True
 # DATABASES
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES = {
-    'default': env.db('DATABASE_URL'),
-}
-DATABASES['default']['ATOMIC_REQUESTS'] = True
+
 
 # URLS
 # ------------------------------------------------------------------------------
@@ -216,7 +208,7 @@ FIXTURE_DIRS = (
 # EMAIL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
-EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.smtp.EmailBackend')
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # ADMIN
 # ------------------------------------------------------------------------------
@@ -232,7 +224,7 @@ MANAGERS = ADMINS
 
 # django-allauth
 # ------------------------------------------------------------------------------
-ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
+ACCOUNT_ALLOW_REGISTRATION = True
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
@@ -255,4 +247,5 @@ DATABASES = {
         'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
     },
 }
+DATABASES['default']['ATOMIC_REQUESTS'] = True
 

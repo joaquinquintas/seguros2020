@@ -47,6 +47,8 @@ LANGUAGES = (
 #https://github.com/jleclanche/django-push-notifications
 # Application definition
 
+ADMIN_URL = "admin"
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -56,6 +58,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.humanize',
+    'debug_toolbar'
 
 ]
 

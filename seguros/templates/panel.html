@@ -31,13 +31,14 @@
 				<a href="#"><span class="icon-header"> <img src="{% static 'images/calendar.svg' %}" /></span></a>
 			</div>
 		</div>
+		{% block cotizacion %}
 		<div class="pv4 ph2">
 			<h2 class="ma0">Datos Cotización</h2>
-			<p class="underline silver f5 ma0">Belen Marian Stegman, #4546</p>
+			<p class="ma0 f6"><a href="#" class="underline silver">Belen Marian Stegman, #4546</a></p>
 		</div>
 		<div class="flex flex-wrap pb4">
 			<div class="w-third-ns w-100 ph2">
-			<div class="bg-white pa4">
+			<div class="bg-white pa4 mb3">
 				<ul class="pb4">
 				<li class="silver f7 pv1">Año</li>
 				<li class="black f6 fw6 pv1">2017</li>
@@ -69,7 +70,7 @@
 			</div>
 		</div>
 		<div class="w-third-ns w-100 ph2">
-				<div class="bg-white pa4">
+				<div class="bg-white pa4 mb3">
 					<ul class="pb4">
 					<li class="silver f7 pv1">Localidad Mercantil</li>
 					<li class="black f6 fw6 pv1">C. Federal</li>
@@ -100,7 +101,7 @@
 					</ul>
 				</div></div>
 				<div class="w-third-ns w-100 ph2">
-						<div class="bg-white pa4">
+						<div class="bg-white pa4 mb3">
 						<ul class="pb4">
 						<li class="silver f7 pv1">Tipo de IVA</li>
 						<li class="black f6 fw6 pv1">Consumidor Final</li>
@@ -114,6 +115,113 @@
 			<button class="btn-black">Cancelar</button>
 			<button class="btn-black">Cotizar</button>
 		</div>
+		{% endblock %}
+		{% block dashboard %}
+		<div class="pv4 ph2">
+			<h2 class="ma0">Belen Mariana Stegman, #4546</h2>
+			<p class="f6 ma0"><a href="mailto:" class="underline silver">beluestegman@hotmail.com</a></p>
+			<p class="f6 ma0"><a href="tel" class="underline silver">tel.11 4444 8888</a></p>
+		</div>
+		<div class="flex flex-wrap pb4">
+			<div class="w-third-ns w-100 ph2">
+			<div class="bg-white pa4 mb3">
+				<ul class="pb4">
+				<li class="silver f7 pv1">Nombre y Apellido</li>
+				<li class="black f6 fw6 pv1">Belen Mariana Stegman</li>
+				</ul>
+				<ul class="pb4">
+				<li class="silver f7 pv1">Email</li>
+				<li class="black f6 fw6 pv1">belustegman@hotmail.com</li>
+				</ul>
+				<ul class="pb4">
+				<li class="silver f7 pv1">Telefono</li>
+				<li class="black f6 fw6 pv1">11 4444 8888</li>
+				</ul>
+				<ul class="pb4">
+				<li class="silver f7 pv1">Edad</li>
+				<li class="black f6 fw6 pv1">29</li>
+				</ul>
+				<ul class="pb4">
+				<li class="silver f7 pv1">Sexo</li>
+				<li class="black f6 fw6 pv1">.</li>
+				</ul>
+				<ul class="pb4">
+				<li class="silver f7 pv1">Estado Civil</li>
+				<li class="black f6 fw6 pv1">.</li>
+				</ul>
+				<ul class="pb4">
+				<li class="silver f7 pv1">Horario</li>
+				<li class="black f6 fw6 pv1">.</li>
+				</ul>
+			</div>
+		</div>
+		<div class="w-third-ns w-100 ph2">
+				<div class="bg-white pa4 mb3">
+					<ul class="pb4">
+					<li class="silver f7 pv1">Marca</li>
+					<li class="black f6 fw6 pv1">Audi</li>
+					</ul>
+					<ul class="pb4">
+					<li class="silver f7 pv1">Modelo</li>
+					<li class="black f6 fw6 pv1">A3</li>
+					</ul>
+					<ul class="pb4">
+					<li class="silver f7 pv1">Versión</li>
+					<li class="black f6 fw6 pv1">A3 1.4 T FSI</li>
+					</ul>
+					<ul class="pb4">
+					<li class="silver f7 pv1">Año</li>
+					<li class="black f6 fw6 pv1">2014</li>
+					</ul>
+					<ul class="pb4">
+					<li class="silver f7 pv1">Kilometros</li>
+					<li class="black f6 fw6 pv1">.</li>
+					</ul>
+					<ul class="pb4">
+					<li class="silver f7 pv1">Combustible</li>
+					<li class="black f6 fw6 pv1">.</li>
+					</ul>
+					<ul class="pb4">
+					<li class="silver f7 pv1">Valor Asegurado</li>
+					<li class="black f6 fw6 pv1">.</li>
+					</ul>
+				</div></div>
+					<div class="w-third-ns w-100 ph2">
+					<div class="bg-white pa4 mb3">
+						<ul class="pb4">
+						<li class="silver f7 pv1">Codigo Postal</li>
+						<li class="black f6 fw6 pv1">.</li>
+						</ul>
+						<ul class="pb4">
+						<li class="silver f7 pv1">Provincia</li>
+						<li class="black f6 fw6 pv1">Buenos Aires</li>
+						</ul>
+						<ul class="pb4">
+						<li class="silver f7 pv1">Localidad</li>
+						<li class="black f6 fw6 pv1">caba</li>
+						</ul>
+					</div>
+					<div class="bg-white pa4 mb3">
+							<ul class="pb4">
+							<li class="silver f7 pv1">Codigo Postal</li>
+							<li class="black f6 fw6 pv1">.</li>
+							</ul>
+							<ul class="pb4">
+							<li class="silver f7 pv1">Provincia</li>
+							<li class="black f6 fw6 pv1">Buenos Aires</li>
+							</ul>
+							<ul class="pb4">
+							<li class="silver f7 pv1">Localidad</li>
+							<li class="black f6 fw6 pv1">caba</li>
+							</ul>
+						</div>
+					</div>
+					<div class="w-third-ns w-100 ph2">
+							
+							</div>
+
+		</div>
+		{% endblock %}
 	</div>
 </div>
 {% endblock %}

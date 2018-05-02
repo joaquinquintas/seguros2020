@@ -18,6 +18,7 @@ ROOT_DIR = environ.Path(__file__) - 3  # (seguros/config/settings/base.py - 3 = 
 APPS_DIR = ROOT_DIR.path('seguros')
 
 
+ALLOWED_HOSTS = ["localhost", "seguros2020.coderio.co"]
 
 # GENERAL
 # ------------------------------------------------------------------------------

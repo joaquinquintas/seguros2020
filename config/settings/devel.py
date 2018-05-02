@@ -11,10 +11,10 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import environ
 
 
-
-ROOT_DIR =  os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))  # (seguros/config/settings/base.py - 3 = seguros/)
+ROOT_DIR = environ.Path(__file__) - 3  # (seguros/config/settings/base.py - 3 = seguros/)
 APPS_DIR = ROOT_DIR.path('seguros')
 
 

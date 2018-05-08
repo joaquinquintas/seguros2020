@@ -18,7 +18,7 @@ ROOT_DIR = environ.Path(__file__) - 3  # (seguros/config/settings/base.py - 3 = 
 APPS_DIR = ROOT_DIR.path('seguros')
 
 
-ALLOWED_HOSTS = ["localhost", "seguros2020.coderio.co"]
+ALLOWED_HOSTS = ["localhost", "seguros2020.coderio.co", "127.0.0.1"]
 
 # GENERAL
 # ------------------------------------------------------------------------------
@@ -65,6 +65,7 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
     # 'django.contrib.humanize', # Handy template tags
     'django.contrib.admin',
+    'tickets'
 ]
 THIRD_PARTY_APPS = [
     'crispy_forms',
@@ -113,7 +114,7 @@ PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.BCryptPasswordHasher',
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators
-AUTH_PASSWORD_VALIDATORS = [
+"""AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
@@ -126,7 +127,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
-]
+]"""
 
 # MIDDLEWARE
 # ------------------------------------------------------------------------------

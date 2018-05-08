@@ -1,2 +1,4 @@
 eclipse.preferences.version=1
+encoding//seguros/tickets/admin.py=utf-8
+encoding//seguros/tickets/management/commands/import_infoauto_db.py=utf-8
 encoding//seguros/tickets/views.py=utf-8

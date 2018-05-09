@@ -53,6 +53,14 @@
                 <li class="pa2 reset-select">
                   <select>
                     <option selected>Marca</option>
+                    {% for brand in brands %}
+                    <option>{{brand}}</option>
+                    {% endfor %}
+                  </select>
+                </li>
+                <li class="pa2 reset-select">
+                  <select>
+                    <option selected>Año</option>
                     <option>1</option>
                   </select>
                 </li>
@@ -68,12 +76,7 @@
                     <option>1</option>
                   </select>
                 </li>
-                <li class="pa2 reset-select">
-                  <select>
-                    <option selected>Año</option>
-                    <option>1</option>
-                  </select>
-                </li>
+                
               </ul>
               <a class="btn-yellow" href="/cobertura">Cotizar</a>
             </div>

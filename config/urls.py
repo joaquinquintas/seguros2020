@@ -4,9 +4,11 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
+from seguros.tickets import views
 
 urlpatterns = [
-    url(r'^$', TemplateView.as_view(template_name='index.html'), name='home'),
+    #url(r'^$', TemplateView.as_view(template_name='index.html'), name='home'),
+    url(r'^$', views.HomePageView, name='home'),
     url(r'^panel$', TemplateView.as_view(template_name='panel.html'), name='panel'),
     url(r'^cobertura$', TemplateView.as_view(template_name='cobertura.html'), name='home'),
 

@@ -9,6 +9,9 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='index.html'), name='home'),
     url(r'^panel$', TemplateView.as_view(template_name='panel.html'), name='panel'),
     url(r'^cobertura$', TemplateView.as_view(template_name='cobertura.html'), name='home'),
+    url(r'^dashboard$', TemplateView.as_view(template_name='pages/dashboard.html'), name='dashboard'),
+    url(r'^tickets$', TemplateView.as_view(template_name='pages/tickets.html'), name='tickets'),
+    url(r'^todos$', TemplateView.as_view(template_name='pages/todos.html'), name='todos'),
 
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),

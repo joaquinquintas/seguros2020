@@ -1,0 +1,85 @@
+{% extends "panel.html" %}
+
+{% block panel_content %}
+<div class="pv4 ph2">
+      <h2 class="ma0">Todos los datos</h2>
+      <p class="ma0 f6">
+        <a href="#" class="underline silver">300</a>
+      </p>
+  </div>
+  <div class="pb4 ph2">
+			<table id="datos" class="sortable">
+					<thead>
+						<tr>
+              <th data-tsorter="numeric">Fecha</th>
+              <th data-tsorter="numeric">Ticket</th>
+              <th data-tsorter="input">Nombre y Apellido</th>
+              <th data-tsorter="input">Vehiculo</th>
+              <th data-tsorter="numeric">Año</th>
+              <th data-tsorter="numeric">Telefono</th>
+              <th data-tsorter="input">Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+              <td>17/01</td>
+              <td>#4546</td>
+              <td>Belén Mariana Stegman</td>
+              <td>AUDI A3 1.8 T FSI QUATTRO</td>
+              <td>2018</td>
+              <td>011 4444 7828</td>
+              <td><p class="status-tags pendiente-st">pendiente</p></td>
+						</tr>
+						<tr>
+              <td>19/01</td>
+              <td>#4456</td>
+              <td>Emanuel Arias</td>
+              <td>AUDI A3 1.8 T FSI QUATTRO</td>
+              <td>2016</td>
+              <td>011 4444 7828</td>
+              <td><p class="status-tags pendiente-st">pendiente</p></td>
+            </tr>
+            <tr>
+              <td>19/01</td>
+              <td>#9456</td>
+              <td>Pato Gutierrez</td>
+              <td>AUDI A3 1.8 T FSI QUATTRO</td>
+              <td>2016</td>
+              <td>011 4444 7828</td>
+              <td><p class="status-tags contratado-st">contratado</p></td>
+            </tr>
+            <tr>
+              <td>16/02</td>
+              <td>#9456</td>
+              <td>Armando Barrera</td>
+              <td>AUDI A3 1.8 T FSI QUATTRO</td>
+              <td>2016</td>
+              <td>011 4444 7828</td>
+              <td><p class="status-tags error-st">error</p></td>
+            </tr>
+            <tr>
+              <td>02/01</td>
+              <td>#9456</td>
+              <td>Armando Barrera</td>
+              <td>AUDI A3 1.8 T FSI QUATTRO</td>
+              <td>2012</td>
+              <td>011 4444 7828</td>
+              <td><p class="status-tags contactado-st">contactado</p></td>
+						</tr>
+					</tbody>
+        </table>
+        <script type="text/javascript">    function init()
+          {
+              var sorter1 = tsorter.create('datos', null, {
+                  'image-number': function(row){
+                      console.log( this );
+                      return parseFloat( this.getCell(row).childNodes[1].nodeValue, 10 );
+                  }
+              });
+          }
+
+          window.onload = init;
+          </script>
+  </div>
+
+{% endblock %}

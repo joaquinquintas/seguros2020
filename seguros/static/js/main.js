@@ -43,14 +43,25 @@ function introLoader(element,delay) {
 
 $(document).ready(function () {
 
-    //menu
+    //menu-desktop
     $('#toggle-menu').click(function () {
         $(this).toggleClass('menu-opened');
         $('#menu').toggleClass('animated fadeIn');
         $('#menu').toggleClass('dn');
     });
+
+        //menu-mobile
+        $('#sidebar-m').click(function () {
+          $(this).toggleClass('rotate-m');
+          $('.sidebar-data').toggleClass('active-side');
+      });
+//dropdown
+      $('.dropdown-menu').click(function() {
+        $(this).closest('.menu-drop').find('list-drop').toggleClass('animated fadeIn');
+    });
   
 });
+
 
 window.onload = () => {
     aload();

@@ -1,227 +1,83 @@
 {% extends "base.html" %}
-
 {% load static i18n %}
 
 {% block content %}
 <div class="flex">
-	<div class="sidebar-data">
-		<div class="fixed">
-		<a href="#" class="link logo-databook">Databook <span>beta</span></a>
-		<nav class="pv4 pl4">
-			<a href="#" class="link pv3 db">Dashboard</a>
-			<a href="#" class="link pv3 db">Tareas</a>
-			<a href="#" class="link pv3 db">Todos</a>
-			<a href="#" class="link pv3 db flex items-center" id="pendiente"><span></span><p>Pendiente</p></a>
-			<a href="#" class="link pv3 db flex items-center" id="contactado"><span></span><p>Contactado</p></a>
-			<a href="#" class="link pv3 db flex items-center" id="nocontratado"><span></span><p>No Contratado</p></a>
-			<a href="#" class="link pv3 db flex items-center" id="contratado"><span></span><p>Contratado</p></a>
-			<a href="#" class="link pv3 db flex items-center" id="error"><span></span><p>Error</p></a>
-			<a href="#" class="link pv3 db flex items-center" id="baja"><span></span><p>Baja</p></a>
-		</nav>
-		<p class="f8 i lh-solid mw4">Databook is a property of VNL Group. 2015 All Rights Reserved</p>
+  <div class="sidebar-data">
+	  <div class="dn-l">
+		<button id="sidebar-m" type="button"><</button>
 	</div>
-	</div>
+    <div class="fixed">
+      <a href="#" class="link logo-databook">Databook
+        <span>beta</span>
+      </a>
+      <nav class="pv4 pl4">
+        <a href="/dashboard" class="link pv3 db">Dashboard</a>
+        <a href="/tickets" class="link pv3 db">Tareas</a>
+        <a href="/todos" class="link pv3 db">Todos</a>
+        <a href="#" class="link pv3 db flex items-center" id="pendiente">
+          <span></span>
+          <p>Pendiente</p>
+        </a>
+        <a href="#" class="link pv3 db flex items-center" id="contactado">
+          <span></span>
+          <p>Contactado</p>
+        </a>
+        <a href="#" class="link pv3 db flex items-center" id="nocontratado">
+          <span></span>
+          <p>No Contratado</p>
+        </a>
+        <a href="#" class="link pv3 db flex items-center" id="contratado">
+          <span></span>
+          <p>Contratado</p>
+        </a>
+        <a href="#" class="link pv3 db flex items-center" id="error">
+          <span></span>
+          <p>Error</p>
+        </a>
+        <a href="#" class="link pv3 db flex items-center" id="baja">
+          <span></span>
+          <p>Baja</p>
+        </a>
+      </nav>
+      <p class="f8 i lh-solid mw4">Databook is a property of VNL Group. 2015 All Rights Reserved</p>
+    </div>
+  </div>
 
-	<div class="content-data bg-near-white">
-		<div class="header-panel flex justify-between">
-			<div class="bg-white flex items-center ph2"><span><img src="{% static 'images/search.svg' %}" class="w-50"/></span><input type="search" placeholder="Buscar" class="bn"></div>
-			<div class="flex">
-				<a href="#" class="link black flex items-center mh3"><span class="profile-pic"><img src="{% static 'images/profile-pic.jpg' %}" /></span><p class="ma0 pl2">Juan Gonzalez</p></a>
-				<a href="#"><span class="icon-header"> <img src="{% static 'images/settings.svg' %}"/></span></a>
-				<a href="#"><span class="icon-header"> <img src="{% static 'images/calendar.svg' %}" /></span></a>
-			</div>
-		</div>
-		{% block cotizacion %}
-		<div class="pv4 ph2">
-			<h2 class="ma0">Datos Cotización</h2>
-			<p class="ma0 f6"><a href="#" class="underline silver">Belen Marian Stegman, #4546</a></p>
-		</div>
-		<div class="flex flex-wrap pb4">
-			<div class="w-third-ns w-100 ph2">
-			<div class="bg-white pa4 mb3">
-				<ul class="pb4">
-				<li class="silver f7 pv1">Año</li>
-				<li class="black f6 fw6 pv1">2017</li>
-				</ul>
-				<ul class="pb4">
-				<li class="silver f7 pv1">Marca</li>
-				<li class="black f6 fw6 pv1">Peugeot</li>
-				</ul>
-				<ul class="pb4">
-				<li class="silver f7 pv1">Grupo Modelo</li>
-				<li class="black f6 fw6 pv1">208</li>
-				</ul>
-				<ul class="pb4">
-				<li class="silver f7 pv1">Modelo</li>
-				<li class="black f6 fw6 pv1">208 1.5 5P Allure</li>
-				</ul>
-				<ul class="pb4">
-				<li class="silver f7 pv1">Rastro Satelital</li>
-				<li class="black f6 fw6 pv1">.</li>
-				</ul>
-				<ul class="pb4">
-				<li class="silver f7 pv1">Provincia</li>
-				<li class="black f6 fw6 pv1">.</li>
-				</ul>
-				<ul class="pb4">
-				<li class="silver f7 pv1">Localidad Allianz</li>
-				<li class="black f6 fw6 pv1">.</li>
-				</ul>
-			</div>
-		</div>
-		<div class="w-third-ns w-100 ph2">
-				<div class="bg-white pa4 mb3">
-					<ul class="pb4">
-					<li class="silver f7 pv1">Localidad Mercantil</li>
-					<li class="black f6 fw6 pv1">C. Federal</li>
-					</ul>
-					<ul class="pb4">
-					<li class="silver f7 pv1">Forma de Pago</li>
-					<li class="black f6 fw6 pv1">American Express</li>
-					</ul>
-					<ul class="pb4">
-					<li class="silver f7 pv1">Fecha de Nacimiento del titular</li>
-					<li class="black f6 fw6 pv1">01/01/1980</li>
-					</ul>
-					<ul class="pb4">
-					<li class="silver f7 pv1">Valor GNC</li>
-					<li class="black f6 fw6 pv1">.</li>
-					</ul>
-					<ul class="pb4">
-					<li class="silver f7 pv1">Cero Km</li>
-					<li class="black f6 fw6 pv1">si</li>
-					</ul>
-					<ul class="pb4">
-					<li class="silver f7 pv1">Codigo Postal</li>
-					<li class="black f6 fw6 pv1">.</li>
-					</ul>
-					<ul class="pb4">
-					<li class="silver f7 pv1">Localidad Zurich</li>
-					<li class="black f6 fw6 pv1">.</li>
-					</ul>
-				</div></div>
-				<div class="w-third-ns w-100 ph2">
-						<div class="bg-white pa4 mb3">
-						<ul class="pb4">
-						<li class="silver f7 pv1">Tipo de IVA</li>
-						<li class="black f6 fw6 pv1">Consumidor Final</li>
-						</ul>
-						<ul class="pb4">
-						<li class="silver f7 pv1">Tipo de Uso</li>
-						<li class="black f6 fw6 pv1">Particular</li>
-						</ul></div></div>
-		</div>
-		<div class="flex">
-			<button class="btn-black">Cancelar</button>
-			<button class="btn-black">Cotizar</button>
-		</div>
-		{% endblock %}
-		{% block dashboard %}
-		<div class="pv4 ph2">
-			<h2 class="ma0">Belen Mariana Stegman, #4546</h2>
-			<p class="f6 ma0"><a href="mailto:" class="underline silver">beluestegman@hotmail.com</a></p>
-			<p class="f6 ma0"><a href="tel" class="underline silver">tel.11 4444 8888</a></p>
-		</div>
-		<div class="flex flex-wrap pb4">
-			<div class="w-third-ns w-100 ph2">
-			<div class="bg-white pa4 mb3">
-				<ul class="pb4">
-				<li class="silver f7 pv1">Nombre y Apellido</li>
-				<li class="black f6 fw6 pv1">Belen Mariana Stegman</li>
-				</ul>
-				<ul class="pb4">
-				<li class="silver f7 pv1">Email</li>
-				<li class="black f6 fw6 pv1">belustegman@hotmail.com</li>
-				</ul>
-				<ul class="pb4">
-				<li class="silver f7 pv1">Telefono</li>
-				<li class="black f6 fw6 pv1">11 4444 8888</li>
-				</ul>
-				<ul class="pb4">
-				<li class="silver f7 pv1">Edad</li>
-				<li class="black f6 fw6 pv1">29</li>
-				</ul>
-				<ul class="pb4">
-				<li class="silver f7 pv1">Sexo</li>
-				<li class="black f6 fw6 pv1">.</li>
-				</ul>
-				<ul class="pb4">
-				<li class="silver f7 pv1">Estado Civil</li>
-				<li class="black f6 fw6 pv1">.</li>
-				</ul>
-				<ul class="pb4">
-				<li class="silver f7 pv1">Horario</li>
-				<li class="black f6 fw6 pv1">.</li>
-				</ul>
-			</div>
-		</div>
-		<div class="w-third-ns w-100 ph2">
-				<div class="bg-white pa4 mb3">
-					<ul class="pb4">
-					<li class="silver f7 pv1">Marca</li>
-					<li class="black f6 fw6 pv1">Audi</li>
-					</ul>
-					<ul class="pb4">
-					<li class="silver f7 pv1">Modelo</li>
-					<li class="black f6 fw6 pv1">A3</li>
-					</ul>
-					<ul class="pb4">
-					<li class="silver f7 pv1">Versión</li>
-					<li class="black f6 fw6 pv1">A3 1.4 T FSI</li>
-					</ul>
-					<ul class="pb4">
-					<li class="silver f7 pv1">Año</li>
-					<li class="black f6 fw6 pv1">2014</li>
-					</ul>
-					<ul class="pb4">
-					<li class="silver f7 pv1">Kilometros</li>
-					<li class="black f6 fw6 pv1">.</li>
-					</ul>
-					<ul class="pb4">
-					<li class="silver f7 pv1">Combustible</li>
-					<li class="black f6 fw6 pv1">.</li>
-					</ul>
-					<ul class="pb4">
-					<li class="silver f7 pv1">Valor Asegurado</li>
-					<li class="black f6 fw6 pv1">.</li>
-					</ul>
-				</div></div>
-					<div class="w-third-ns w-100 ph2">
-					<div class="bg-white pa4 mb3">
-						<ul class="pb4">
-						<li class="silver f7 pv1">Codigo Postal</li>
-						<li class="black f6 fw6 pv1">.</li>
-						</ul>
-						<ul class="pb4">
-						<li class="silver f7 pv1">Provincia</li>
-						<li class="black f6 fw6 pv1">Buenos Aires</li>
-						</ul>
-						<ul class="pb4">
-						<li class="silver f7 pv1">Localidad</li>
-						<li class="black f6 fw6 pv1">caba</li>
-						</ul>
-					</div>
-					<div class="bg-white pa4 mb3">
-							<ul class="pb4">
-							<li class="silver f7 pv1">Codigo Postal</li>
-							<li class="black f6 fw6 pv1">.</li>
-							</ul>
-							<ul class="pb4">
-							<li class="silver f7 pv1">Provincia</li>
-							<li class="black f6 fw6 pv1">Buenos Aires</li>
-							</ul>
-							<ul class="pb4">
-							<li class="silver f7 pv1">Localidad</li>
-							<li class="black f6 fw6 pv1">caba</li>
-							</ul>
-						</div>
-					</div>
-					<div class="w-third-ns w-100 ph2">
-							
-							</div>
+  <div class="content-data bg-near-white">
+    <div class="header-panel flex flex-wrap-ns flex-wrap-reverse justify-between items-center">
+      <div class="bg-white flex items-center ph2 h2 mv2 w-auto-ns w-100">
+        <span>
+          <img src="{% static 'images/search.svg' %}" class="w-50" />
+        </span>
+        <input type="search" placeholder="Buscar" class="bn w-100">
+      </div>
+      <div class="flex mv2 w-auto-ns w-100 justify-end">
+        <a href="#" class="link black flex items-center mh3">
+          <span class="profile-pic">
+            <img src="{% static 'images/profile-pic.jpg' %}" />
+          </span>
+          <p class="f6 ma0 pl2 dn-ms">Juan Gonzalez</p>
+        </a>
+        <a href="#">
+          <span class="icon-header">
+            <img src="{% static 'images/settings.svg' %}" />
+          </span>
+        </a>
+        <a href="#">
+          <span class="icon-header">
+            <img src="{% static 'images/calendar.svg' %}" />
+          </span>
+        </a>
+      </div>
+    </div>
+    {% block panel_content %}
 
-		</div>
-		{% endblock %}
-	</div>
+	  {% endblock %}
+  </div>
 </div>
 {% endblock %}
+{% block javascript %}
+<script src="{% static 'js/tsorter.min.js' %}"></script>
+{% endblock javascript %}
+</script>

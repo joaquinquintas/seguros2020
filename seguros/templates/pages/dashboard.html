@@ -3,10 +3,83 @@
 {% block panel_content %}
 <div class="pv4 ph2">
       <h2 class="ma0">Dashboard</h2>
-
+      <p class="ma0 f6 silver">Lunes 19 de Enero 2018</p>
   </div>
-<div class="pb4 ph2">
+  <div class="flex flex-wrap pb4">
+    <div class="w-40-ns w-100 ph2">
+      <div class="datos-panel">Calendar</div>
+    </div>
+    <div class="w-20-ns w-100 ph2">
+        <div class="datos-panel">Fecha</div>
+      </div>
+      <div class="w-40-ns w-100 ph2">
+          <div class="datos-panel" id="nueva-tarea">
+              <div class="pb3 flex items-center">
+                  <span class="black f6 fw6 pv1">Nueva Tarea</span>
+                  <span class="silver ph2">|</span><a href="#" class="silver f6">19 Enero 2018</a>
+              </div>
+              <ul>
+                  <input class="w-100" placeholder="Asignar a Ticket, Nombre y Apellido">
+                <textarea class="bg-white w-100 h4" placeholder="Descripcion"></textarea>
+                <span class="nl2"><button class="btn-black">Aceptar</button></span>
+              </ul>
+            </div>
+        </div>
+  </div>
+  <div class="pb4 ph2">
+    <table id="datos" class="sortable">
+        <thead>
+          <tr>
+            <th data-tsorter="numeric" width="10%">Fecha</th>
+            <th data-tsorter="numeric" width="10%">Ticket</th>
+            <th data-tsorter="input" width="20%">Nombre y Apellido</th>
+            <th data-tsorter="input"  width="40%">Tarea</th>
+            <th data-tsorter="input" width="20%">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>17/01</td>
+            <td>#4546</td>
+            <td>Belén Mariana Stegman</td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla convallis est, porta rhoncus dui faucibus in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</td>
+            <td><p class="status-tags bg-red">pendiente</p></td>
+          </tr>
+          <tr>
+            <td>19/01</td>
+            <td>#4456</td>
+            <td>Emanuel Arias</td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla convallis est, porta rhoncus dui faucibus in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</td>
+            <td><p class="status-tags bg-red">pendiente</p></td>
+          </tr>
+          <tr>
+            <td>19/01</td>
+            <td>#9456</td>
+            <td>Pato Gutierrez</td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla convallis est, porta rhoncus dui faucibus in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</td>
+            <td><p class="status-tags bg-green">done</p></td>
+          </tr>
+          <tr>
+            <td>16/02</td>
+            <td>#9456</td>
+            <td>Armando Barrera</td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla convallis est, porta rhoncus dui faucibus in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</td>
+            <td><p class="status-tags bg-gold">to do</p></td>
+          </tr>
+        </tbody>
+      </table>
+      <script type="text/javascript">    
+      function init(){
+            var sorter1 = tsorter.create('datos', null, {
+                'image-number': function(row){
+                    console.log( this );
+                    return parseFloat( this.getCell(row).childNodes[1].nodeValue, 10 );
+                }
+            });
+        }
 
+        window.onload = init;
+        </script>
 </div>
 
 {% endblock %}

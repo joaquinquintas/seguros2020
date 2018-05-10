@@ -2,6 +2,7 @@
 {% load static i18n %}
 
 {% block content %}
+<body class="bg-black">
 <div class="flex">
   <div class="sidebar-data">
 	  <div class="dn-l">
@@ -13,7 +14,7 @@
       </a>
       <nav class="pv4 pl4">
         <a href="/dashboard" class="link pv3 db">Dashboard</a>
-        <a href="/tickets" class="link pv3 db">Tareas</a>
+        <a href="/tareas" class="link pv3 db">Tareas</a>
         <a href="/todos" class="link pv3 db">Todos</a>
         <a href="#" class="link pv3 db flex items-center" id="pendiente">
           <span></span>
@@ -80,4 +81,4 @@
 {% block javascript %}
 <script src="{% static 'js/tsorter.min.js' %}"></script>
 {% endblock javascript %}
-</script>
+

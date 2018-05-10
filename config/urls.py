@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^dashboard$', TemplateView.as_view(template_name='pages/dashboard.html'), name='dashboard'),
     url(r'^tickets$', TemplateView.as_view(template_name='pages/tickets.html'), name='tickets'),
     url(r'^todos$', TemplateView.as_view(template_name='pages/todos.html'), name='todos'),
+    url(r'^tareas$', TemplateView.as_view(template_name='pages/tareas.html'), name='tareas'),
 
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),

@@ -1,13 +1,14 @@
 from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
+from django.contrib.auth.decorators import login_required
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='index.html'), name='home'),
-    url(r'^panel$', TemplateView.as_view(template_name='panel.html'), name='panel'),
+    url(r'^panel$', login_required(TemplateView.as_view(template_name='panel.html')), name='panel'),
     url(r'^cobertura$', TemplateView.as_view(template_name='cobertura.html'), name='home'),
     url(r'^dashboard$', TemplateView.as_view(template_name='pages/dashboard.html'), name='dashboard'),
     url(r'^tickets$', TemplateView.as_view(template_name='pages/tickets.html'), name='tickets'),

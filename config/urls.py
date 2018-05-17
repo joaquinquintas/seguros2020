@@ -18,7 +18,7 @@ urlpatterns = [
     path(r'cotizador/versions/<int:brand_id>/<int:year>/<int:model_id>/', views.get_versions, name='versions-brand'),
     
 
-    url(r'^$', TemplateView.as_view(template_name='index.html'), name='home'),
+    #url(r'^$', TemplateView.as_view(template_name='index.html'), name='home'),
     url(r'^cobertura$', TemplateView.as_view(template_name='cobertura.html'), name='home'),
     url(r'^dashboard$', TemplateView.as_view(template_name='pages/dashboard.html'), name='dashboard'),
     url(r'^tickets$', TemplateView.as_view(template_name='pages/tickets.html'), name='tickets'),

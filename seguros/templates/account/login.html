@@ -4,14 +4,14 @@
 {% load account socialaccount %}
 {% load crispy_forms_tags %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block head_title %}Ingresar{% endblock %}
 
 {% block inner %}
 
   <span class="w-100 bg-near-white h1 db"></span>
   <section class="mw7 center ph3 tc pv5-ns pv4">
 
-    <h1>{% trans "Sign In" %}</h1>
+    <h1>Ingresar</h1>
 
     <form class="login" method="POST" action="{% url 'account_login' %}">
       {% csrf_token %}

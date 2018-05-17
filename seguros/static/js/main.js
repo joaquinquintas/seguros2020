@@ -59,6 +59,7 @@ $(document).ready(function () {
       $('.dropdown-menu').click(function() {
         $(this).closest('.menu-drop').find('list-drop').toggleClass('animated fadeIn');
     });
+
   
 });
 

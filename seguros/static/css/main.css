@@ -301,11 +301,6 @@ table tr {
   text-align: left;
 }
 
-table th,
-table td {
-  text-align: center;
-}
-
 table td {
   padding: 1em;
 }
@@ -373,8 +368,8 @@ table th {
 }
 
 #datos th {
-    padding: 1rem 0.5rem;
-    text-align: center;
+    padding: 1rem 1.5rem;
+    text-align: left;
     font-size: 12px;
     color: black;
 }
@@ -389,7 +384,6 @@ table th {
 
 #datos tr,
 #datos td {
-  text-align: center;
   font-size: 12px;
   padding: 0.5rem 1.5rem;
   color: #777777;
@@ -404,6 +398,7 @@ table th {
   font-weight: 600;
   letter-spacing: 1px;
   font-size: 10px;
+  text-align: center;
 }
 
 @media screen and (max-width: 600px) {
@@ -459,11 +454,11 @@ table th {
 /*DASHBOARD*/
 
 .sidebar-data {
-  background: black;
   color: white;
   width: 280px;
   padding: 50px;
   position: relative;
+  height: 100vh;
 }
 
 .sidebar-data a {
@@ -547,30 +542,24 @@ a.logo-databook {
   background-color: white;
 }
 
-.sidebar-data nav #contactado span,
-.contactado-st {
+.sidebar-data nav #contactado span {
   background-color: #3a99d9;
 }
 
-.sidebar-data nav #nocontratado span,
-.nocontratado-st {
+.sidebar-data nav #nocontratado span {
   background-color: #f09a2c;
 }
 
-.sidebar-data nav #contratado span,
-.contratado-st {
+.sidebar-data nav #contratado span {
   background-color: #3aca75;
 }
 
-.sidebar-data nav #error span,
-.error-st {
+.sidebar-data nav #error span {
   background-color: #ff564a;
 }
 
-.sidebar-data nav #baja span,
-.baja-st,
-.pendiente-st {
-  background-color: #777777;
+.sidebar-data nav #baja span {
+  background-color: #666;
 }
 
 .icon-header {
@@ -588,24 +577,49 @@ a.logo-databook {
   display: block;
 }
 
-.header-panel input::placeholder {
+.header-panel input::placeholder,
+#nueva-tarea input::placeholder,
+#nueva-tarea textarea::placeholder  {
   color: #999;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#nueva-tarea textarea,
+#nueva-tarea input {
+  color: #999;
+  border: solid 1px transparent;
+  font-size: 12px;
+  margin: 10px 0;
+}
+#nueva-tarea textarea {
+  border: solid 1px silver;
+  padding: 10px;
+}
+
+#nueva-tarea input {
+  border: solid 1px transparent;
+  border-bottom: solid 1px silver;
+  height: 30px;
 }
 
 select.status {
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: transparent;
+  background: silver;
   margin-left: 30px;
   text-transform: uppercase;
-  padding: .5rem;
-  font-size: 12px;
   border: none;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  font-size: 10px;
+  text-align: center;
+  color: white;
+  padding: 5px;;
 }
 
 select.status option {
-  margin: 40px;
-  border-radius: 3px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 select.status option[value="1"] {
@@ -614,5 +628,17 @@ select.status option[value="1"] {
 
 select.status option[value="2"] {
   background: #3a99d9;
+}
+.datos-panel {
+  margin-bottom: 1rem;
+  padding: 2rem;
+  background: white;
+}
+.datos-panel ul {
+  padding-bottom: 2.5rem;
+}
+
+.datos-panel ul:last-child {
+  padding-bottom: 0;
 }
 

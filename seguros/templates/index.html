@@ -117,7 +117,7 @@ $(document).ready(function(){
 {% endblock %}
 
 {% block content %}
-
+<body>
   <div id="introLoader" class="introloader">
     <div class="spinner">
       <div class="spinner-inner"></div>
@@ -214,7 +214,6 @@ $(document).ready(function(){
         <li class="ph3 tc"><img src="{% static 'images/logo-7.jpg' %}" class="w-80"></li>
       </ul>
     </section>
-  {% endblock %}
 <span class="w-100 bg-near-white h1 db"></span>
 <section class="mw7 center ph3 tc pv5-ns pv4">
   <h1 class="serif normal ma0 dark-gray">Todo comienza con mejor tecnologia</h1>
@@ -256,6 +255,7 @@ $(document).ready(function(){
           </div>
         </div>
       </section>
+      {% endblock %}
       <section class="bg-near-white">
         <div class="mw8 center ph3">
           <div class="flex justify-center flex-wrap">

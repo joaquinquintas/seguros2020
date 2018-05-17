@@ -51,14 +51,13 @@ class Command(BaseCommand):
                     
                 try:
                     
-                    model = CarModel.objects.get(id=row[1])
-                    model.brand = brand
+                    model = CarModel.objects.get(infoauto_id=row[1], brand=brand)
                     model.name = row[2]
                     model.slug = slugify(row[2])
                     model.save()
                     
                 except CarModel.DoesNotExist:
-                    model = CarModel.objects.create(id=row[1], brand=brand, name = row[2], slug = slugify(row[2]))
+                    model = CarModel.objects.create(infoauto_id=row[1], brand=brand, name = row[2], slug = slugify(row[2]))
                     
     
     def import_versions(self):
@@ -68,7 +67,7 @@ class Command(BaseCommand):
             readCSV = csv.reader(csvfile, delimiter=',')
             for row in readCSV:
                 print(row)
-                #brand = CarBrand.objects.get(id=row[0])
+                brand = CarBrand.objects.get(id=row[0])
                 model = CarModel.objects.get(id=row[5])
                 
                 infoauto_id = row[4]
@@ -84,6 +83,7 @@ class Command(BaseCommand):
                                                   name=name, slug=slug,
                                                   model=model,
                                                   year=2018,
+                                                  brand=brand,
                                                   price=price_2018* 1000)
                 
                 price_2017 = int(row[9])
@@ -95,6 +95,7 @@ class Command(BaseCommand):
                                                   name=name, slug=slug,
                                                   model=model,
                                                   year=2017,
+                                                  brand=brand,
                                                   price=price_2017* 1000)
                 
                 price_2016 = int(row[10])
@@ -106,6 +107,7 @@ class Command(BaseCommand):
                                                   name=name, slug=slug,
                                                   model=model,
                                                   year=2016,
+                                                  brand=brand,
                                                   price=price_2016* 1000)
                 
                 price_2015 = int(row[11])
@@ -117,6 +119,7 @@ class Command(BaseCommand):
                                                   name=name, slug=slug,
                                                   model=model,
                                                   year=2015,
+                                                  brand=brand,
                                                   price=price_2015* 1000)
                 price_2014 = int(row[12])
                 if price_2014 != 0:
@@ -127,6 +130,7 @@ class Command(BaseCommand):
                                                   name=name, slug=slug,
                                                   model=model,
                                                   year=2014,
+                                                  brand=brand,
                                                   price=price_2014* 1000)
                 
                 price_2013 = int(row[13])
@@ -138,6 +142,7 @@ class Command(BaseCommand):
                                                   name=name, slug=slug,
                                                   model=model,
                                                   year=2013,
+                                                  brand=brand,
                                                   price=price_2013* 1000)
                         
                 price_2012 = int(row[14])
@@ -149,6 +154,7 @@ class Command(BaseCommand):
                                                   name=name, slug=slug,
                                                   model=model,
                                                   year=2012,
+                                                  brand=brand,
                                                   price=price_2012* 1000)
                         
                 price_2011 = int(row[15])
@@ -160,6 +166,7 @@ class Command(BaseCommand):
                                                   name=name, slug=slug,
                                                   model=model,
                                                   year=2011,
+                                                  brand=brand,
                                                   price=price_2011* 1000)
                 
                 price_2010 = int(row[16])
@@ -171,6 +178,7 @@ class Command(BaseCommand):
                                                   name=name, slug=slug,
                                                   model=model,
                                                   year=2010,
+                                                  brand=brand,
                                                   price=price_2010* 1000)
                         
                 price_2009 = int(row[17])
@@ -182,6 +190,7 @@ class Command(BaseCommand):
                                                   name=name, slug=slug,
                                                   model=model,
                                                   year=2009,
+                                                  brand=brand,
                                                   price=price_2009* 1000)
                         
                 price_2008 = int(row[17])
@@ -193,6 +202,7 @@ class Command(BaseCommand):
                                                   name=name, slug=slug,
                                                   model=model,
                                                   year=2008,
+                                                  brand=brand,
                                                   price=price_2008 * 1000)
                  
                 price_2007 = int(row[18])
@@ -204,6 +214,7 @@ class Command(BaseCommand):
                                                   name=name, slug=slug,
                                                   model=model,
                                                   year=2007,
+                                                  brand=brand,
                                                   price=price_2007 * 1000)
                 price_2006 = int(row[19])
                 if price_2006 != 0:
@@ -214,6 +225,7 @@ class Command(BaseCommand):
                                                   name=name, slug=slug,
                                                   model=model,
                                                   year=2006,
+                                                  brand=brand,
                                                   price=price_2006 * 1000) 
                 price_2005 = int(row[20])
                 if price_2005 != 0:
@@ -224,6 +236,7 @@ class Command(BaseCommand):
                                                   name=name, slug=slug,
                                                   model=model,
                                                   year=2005,
+                                                  brand=brand,
                                                   price=price_2005 * 1000) 
                 
                 
@@ -236,6 +249,7 @@ class Command(BaseCommand):
                                                   name=name, slug=slug,
                                                   model=model,
                                                   year=2004,
+                                                  brand=brand,
                                                   price=price_2004 * 1000) 
                         
                 price_2003 = int(row[22])
@@ -247,6 +261,7 @@ class Command(BaseCommand):
                                                   name=name, slug=slug,
                                                   model=model,
                                                   year=2003,
+                                                  brand=brand,
                                                   price=price_2003 * 1000)
                 
                 price_2002 = int(row[23])
@@ -258,6 +273,7 @@ class Command(BaseCommand):
                                                   name=name, slug=slug,
                                                   model=model,
                                                   year=2002,
+                                                  brand=brand,
                                                   price=price_2002 * 1000)
                         
                 price_2001 = int(row[24])
@@ -269,6 +285,7 @@ class Command(BaseCommand):
                                                   name=name, slug=slug,
                                                   model=model,
                                                   year=2001,
+                                                  brand=brand,
                                                   price=price_2001 * 1000)
                         
                 price_2000 = int(row[25])
@@ -280,6 +297,7 @@ class Command(BaseCommand):
                                                   name=name, slug=slug,
                                                   model=model,
                                                   year=2000,
+                                                  brand=brand,
                                                   price=price_2000 * 1000)
                 
                 price_1999 = int(row[26])
@@ -291,6 +309,7 @@ class Command(BaseCommand):
                                                   name=name, slug=slug,
                                                   model=model,
                                                   year=1999,
+                                                  brand=brand,
                                                   price=price_1999 * 1000)
                 
                 price_1998 = int(row[27])
@@ -302,4 +321,6 @@ class Command(BaseCommand):
                                                   name=name, slug=slug,
                                                   model=model,
                                                   year=1998,
+                                                  brand=brand,
                                                   price=price_1998 * 1000)
+                        

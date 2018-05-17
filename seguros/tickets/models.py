@@ -33,9 +33,37 @@ class CarBrand(models.Model):
 
     def __str__(self):
         return self.name
+    
+    class Meta:
+        ordering = ["name"]
 
+    
+    @property
+    def available_years(self):
+        return list(CarVersion.objects.filter(brand=self).order_by("-year").distinct().values_list('year',flat=True))
+    
+    def available_models(self, year):
+        return list(CarVersion.objects.filter(brand=self, 
+                                              year=year).order_by("model__name")\
+                    .distinct().values(
+                                'model__id',
+                                'model__infoauto_id',
+                                'model__name'))
+        
+    def available_versions(self, year, model_id):
+        return list(CarVersion.objects.filter(brand=self, 
+                                              year=year,
+                                              model__id=model_id).order_by("name")\
+                    .distinct().values(
+                                'id',
+                                'name',
+                                'infoauto_id',
+                                'year',
+                                'price'))
+    
 class CarModel(models.Model):
     brand = models.ForeignKey(CarBrand, related_name="models", on_delete=models.CASCADE)
+    infoauto_id = models.IntegerField()
     name = models.CharField(verbose_name='Modelo', max_length=150)
     slug = models.SlugField(max_length=300)
     
@@ -45,14 +73,23 @@ class CarModel(models.Model):
     
     def __str__(self):
         return self.name
+    
+    class Meta:
+        ordering = ["name"]
+        unique_together = (("infoauto_id", "brand"),)
+        
 
 class CarVersion(models.Model):
     infoauto_id = models.IntegerField()
+    brand = models.ForeignKey(CarBrand, related_name="brand_versions", on_delete=models.CASCADE)
     model = models.ForeignKey(CarModel, related_name="versions", on_delete=models.CASCADE)
     name = models.CharField(verbose_name='Version', max_length=150)
     slug = models.SlugField(max_length=300)
     year = models.IntegerField()
     price = models.IntegerField()
+    
+    class Meta:
+        ordering = ["name"]
     
     @property
     def brand_name(self):

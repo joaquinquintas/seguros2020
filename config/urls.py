@@ -6,9 +6,18 @@ from django.views.generic import TemplateView
 from django.views import defaults as default_views
 from seguros.tickets import views
 
+from django.urls import path
+
+
 urlpatterns = [
     #url(r'^$', TemplateView.as_view(template_name='index.html'), name='home'),
-    url(r'^$', views.HomePageView, name='home'),
+    #url(r'^$', views.HomePageView, name='home'),
+    path(r'', views.HomePageView.as_view(), name='home'),
+    path(r'cotizador/years/<int:brand_id>/', views.get_years, name='years-brand'),
+    path(r'cotizador/models/<int:brand_id>/<int:year>/', views.get_models, name='models-brand'),
+    path(r'cotizador/versions/<int:brand_id>/<int:year>/<int:model_id>/', views.get_versions, name='versions-brand'),
+    
+    
     url(r'^panel$', TemplateView.as_view(template_name='panel.html'), name='panel'),
     url(r'^cobertura$', TemplateView.as_view(template_name='cobertura.html'), name='home'),
     url(r'^dashboard$', TemplateView.as_view(template_name='pages/dashboard.html'), name='dashboard'),

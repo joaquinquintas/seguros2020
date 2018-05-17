@@ -2,6 +2,120 @@
 
 {% load static i18n %}
 
+{% block entrajs %}
+
+
+
+<script id="data-prov" type="application/json">
+[{"id":"0","nombre":"Provincia","pais_id":"1"},{"id":"1","nombre":"BUENOS AIRES","pais_id":"1"},{"id":"2","nombre":"CATAMARCA","pais_id":"1"},{"id":"3","nombre":"CHACO","pais_id":"1"},{"id":"4","nombre":"CHUBUT","pais_id":"1"},{"id":"5","nombre":"CORDOBA","pais_id":"1"},{"id":"6","nombre":"CORRIENTES","pais_id":"1"},{"id":"7","nombre":"ENTRE RIOS","pais_id":"1"},{"id":"8","nombre":"FORMOSA","pais_id":"1"},{"id":"9","nombre":"JUJUY","pais_id":"1"},{"id":"10","nombre":"LA PAMPA","pais_id":"1"},{"id":"11","nombre":"LA RIOJA","pais_id":"1"},{"id":"12","nombre":"MENDOZA","pais_id":"1"},{"id":"13","nombre":"MISIONES","pais_id":"1"},{"id":"14","nombre":"NEUQUEN","pais_id":"1"},{"id":"15","nombre":"RIO NEGRO","pais_id":"1"},{"id":"16","nombre":"SALTA","pais_id":"1"},{"id":"17","nombre":"SAN JUAN","pais_id":"1"},{"id":"18","nombre":"SAN LUIS","pais_id":"1"},{"id":"19","nombre":"SANTA CRUZ","pais_id":"1"},{"id":"20","nombre":"SANTIAGO DEL ESTERO","pais_id":"1"},{"id":"21","nombre":"TIERRA DEL FUEGO","pais_id":"1"},{"id":"22","nombre":"TUCUMAN","pais_id":"1"},{"id":"23","nombre":"SANTA FE","pais_id":"1"},{"id":"24","nombre":"CAPITAL FEDERAL","pais_id":"1"}]</script>
+
+<script>
+$(document).ready(function(){
+	var provs = JSON.parse( $("#data-prov").html() );
+	
+	$("#default_marca").attr('selected','selected');
+	
+    
+	$("#select-marca").on('change', function(e){
+	      var id      = $(this).val();
+	      var url = "/cotizador/years/"+id+"/";
+
+	      $.ajax({
+		    	url: url,
+		        type: 'GET',
+		        dataType: 'json',
+		        
+		      })
+		      .done(function(resp) {
+		        console.log(resp);
+		        $('#selector-year').html("");
+		        $('#selector-year').append($('<option>', { 
+	                value: "0",
+	                text : "Año" 
+	            }));
+		        $.each( resp, function(index, value){
+		        	
+		        	$('#selector-year').append($('<option>', { 
+		                value: value,
+		                text : value 
+		            }));
+		        });
+		        
+		      })
+		      .fail(function(resp) {
+		        console.log(resp);
+		      });   
+	    });
+	
+	 $('body').on('change', '#selector-year', function(e){
+	      var year      = $(this).val();
+	      var brand_id = $("#select-marca").val();
+	      var url = "cotizador/models/"+brand_id+"/"+year+"/"
+
+	      $.ajax({
+		    	url: url,
+		        type: 'GET',
+		        dataType: 'json',
+		        
+		      })
+		      .done(function(resp) {
+		        console.log(resp);
+		        $('#selector-model').html("");
+		        $('#selector-model').append($('<option>', { 
+	                value: "0",
+	                text : "Modelo" 
+	            }));
+		        $.each( resp, function(index, value){
+		        	
+		        	$('#selector-model').append($('<option>', { 
+		                value: value.model__id,
+		                text : value.model__name 
+		            }));
+		        });
+		        
+		      })
+		      .fail(function(resp) {
+		        console.log(resp);
+		      });   
+	    });
+	 
+	 $('body').on('change', '#selector-model', function(e){
+	      var modelo_id      = $(this).val();
+	      var brand_id = $("#select-marca").val();
+	      var year = $("#selector-year").val();
+	      var url = "cotizador/versions/"+brand_id+"/"+year+"/"+modelo_id+"/"
+
+	      $.ajax({
+		    	url: url,
+		        type: 'GET',
+		        dataType: 'json',
+		        
+		      })
+		      .done(function(resp) {
+		        console.log(resp);
+		        $('#selector-version').html("");
+		        $('#selector-version').append($('<option>', { 
+	                value: "0",
+	                text : "Version" 
+	            }));
+		        $.each( resp, function(index, value){
+		        	
+		        	$('#selector-version').append($('<option>', { 
+		                value: value.id,
+		                text : value.name 
+		            }));
+		        });
+		        
+		      })
+		      .fail(function(resp) {
+		        console.log(resp);
+		      });   
+	    });
+});
+
+</script>
+{% endblock %}
+
 {% block content %}
 
   <div id="introLoader" class="introloader">
@@ -48,30 +162,29 @@
           <div class="w-60-ns w-100 tc pv0-ns pv5">
             <h1 class="f-5-ns f1 ma0 dark-gray">Cotizá tu seguro a</br>precio imbatible.</h1>
             <p>Comparativa Smart. Decile Hola al futuro.</p>
-            <div class="front-form">
+            <div class="front-form selector">
               <ul class="flex justify-center pb3 flex-row-ns flex-column">
                 <li class="pa2 reset-select">
-                  <select>
-                    <option selected>Marca</option>
-                    {% for brand in brands %}
-                    <option>{{brand}}</option>
-                    {% endfor %}
+                  <select id="select-marca">
+                    <option id="default_marca" selected>Marca</option>
+	                    {% for brand in brands %}
+	                    	<option value="{{brand.id}}">{{brand}}</option>
+	                    {% endfor %}
                   </select>
                 </li>
                 <li class="pa2 reset-select">
-                  <select>
+                  <select id = "selector-year">
                     <option selected>Año</option>
-                    <option>1</option>
                   </select>
                 </li>
                 <li class="pa2 reset-select">
-                  <select>
+                  <select id = "selector-model" >
                     <option selected>Modelo</option>
                     <option>1</option>
                   </select>
                 </li>
                 <li class="pa2 reset-select">
-                  <select>
+                  <select id = "selector-version">
                     <option selected>Version</option>
                     <option>1</option>
                   </select>

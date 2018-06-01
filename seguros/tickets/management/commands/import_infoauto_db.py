@@ -20,8 +20,8 @@ ROOT_DIR = environ.Path(__file__) - 4
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
-        #self.import_brands()
-        #self.import_models()
+        self.import_brands()
+        self.import_models()
         self.import_versions()
     
     def import_brands(self):
